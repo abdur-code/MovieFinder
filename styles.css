@@ -1,0 +1,471 @@
+body {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  /* background: linear-gradient( #000000, #004d40); */
+  /* background: url('bg.jpg') no-repeat center center fixed; */
+  background: url('bg2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.oswald-heading {
+  font-family: "Oswald", serif;
+  font-weight: 700;
+  color: rgb(255, 21, 21);
+}
+
+/* Popular Movies */
+
+#movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.movie-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  border-radius: 20px;
+  background: rgba(4, 3, 53, 0.218);  
+  backdrop-filter: blur(0px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+/* Recommended Movies */
+
+#recommendations-container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.recommendations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.recommendation-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  width: 250px;
+  border-radius: 20px;
+  background: rgba(4, 3, 53, 0.2); 
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(0px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.recommendation-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.recommendation-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.recommendations-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+#movie-search {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.415);
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #012e11c0;
+  backdrop-filter: blur(15px);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+}
+
+button:hover {
+  background-color: #0057b300;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(4, 3, 53, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 20px 20px;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo {
+  color: #e50914;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive navbar */
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+
+  .navbar {
+    border-radius: 0;
+  }
+
+  .nav-content {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .search-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #movie-search {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .oswald-heading {
+    font-size: 1.8rem;
+    margin: 15px 0;
+  }
+
+  .movie-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .recommendations-heading {
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  .movie-card {
+    width: calc(50% - 20px);
+    min-width: 150px;
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie-card {
+    width: calc(50% - 20px);
+    min-width: 150px;
+  }
+
+  .search-container {
+    padding: 0 10px;
+  }
+
+  #movie-search {
+    width: 100%;
+  }
+
+  .recommendations-grid {
+    padding: 0 10px;
+  }
+
+  .recommendation-card {
+    width: calc(50% - 20px);
+    min-width: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 140px;
+  }
+
+  .movie-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .recommendation-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .recommendations-heading {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .oswald-heading {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .movie-card h3 {
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+}
+
+.search-suggestions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(4, 3, 53, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 5px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.suggestion-item img {
+  width: 46px;
+  height: 69px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.suggestion-info {
+  flex: 1;
+}
+
+.suggestion-title {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.suggestion-year {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Add scrollbar styling */
+.search-suggestions::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-suggestions::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.search-suggestions::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background: rgba(4, 3, 53, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.api-credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+.tmdb-logo {
+    height: 30px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.tmdb-logo:hover {
+    opacity: 1;
+}
+
+.omdb-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(229, 9, 20, 0.8);
+    transition: color 0.3s ease;
+}
+
+.omdb-logo:hover {
+    color: rgba(229, 9, 20, 1);
+}
+
+.attribution {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+@media screen and (max-width: 768px) {
+    .api-credits {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tmdb-logo {
+        height: 25px;
+    }
+
+    .omdb-logo {
+        font-size: 20px;
+    }
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    background: rgba(4, 3, 53, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0 30px 0;
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-tips {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.welcome-tips p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .welcome-section {
+        padding: 15px;
+        margin: 15px 0 25px 0;
+    }
+
+    .welcome-text {
+        font-size: 1.1rem;
+    }
+
+    .welcome-tips {
+        gap: 15px;
+    }
+
+    .welcome-tips p {
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+
+

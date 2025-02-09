@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="movie-details.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">MovieFinder</a>
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="movie-search" 
+                    placeholder="Search for a movie..."
+                    oninput="showSearchSuggestions(this.value)"
+                >
+                <button onclick="searchMovie()">Search</button>
+                <div id="search-suggestions" class="search-suggestions"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="welcome-section">
+            <p class="welcome-text">Explore detailed information about your chosen movie and discover similar films that match your interests.</p>
+            <div class="welcome-tips">
+                <p>📽️ View movie details, ratings, and cast</p>
+                <p>🎯 Get tailored movie recommendations</p>
+                <p>🎬 Click on any recommended movie to learn more</p>
+            </div>
+        </div>
+        <div id="movie-details"></div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Powered by:</p>
+                <div class="api-credits">
+                    <a href="https://www.themoviedb.org/" target="_blank">
+                        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" 
+                             alt="TMDB" 
+                             class="tmdb-logo">
+                    </a>
+                    <a href="https://www.omdbapi.com/" target="_blank">
+                        <span class="omdb-logo">OMDb API</span>
+                    </a>
+                </div>
+                <p class="attribution">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="movie-details.js"></script>
+</body>
+</html> 
